@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<style>
+		*{
+		margin:0px;
+		}
+		
+		.container-fluid{
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar{
+			border-radius: 0px;
+			background-color:	black;
+			border:2px solid yellow;
+		}
+
+		.navbar-brand{
+			font-size: 15px;
+			color: red;
+
+		}
+		.navbar-brand:hover{
+			color: white;
+		}
+		.nav{
+			margin: 0;
+			padding: 0;
+			align-items:right;
+		}
+
+
+		.navbar-nav{
+			font-size: 17.5px;
+			text-align: center;
+			margin: 0;
+			padding-top: 27.5px;
+			
+			align-items:right;
+		}
+
+		.navbar-toggle{
+			border: 2px solid white;
+			margin-right: 25px;
+		}
+
+		.icon-bar{
+			background-color: black;
+		}
+
+		nav > li {
+
+			width: 100%;
+		}
+
+		.menu-item{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			background-color: white;
+
+			color: black;
+
+		}
+
+		.menu-item:hover{
+			background-color: rgba(0,0,0,0.9);
+			color: rgba(0,0,0,0.4);
+		}
+		#corona{
+		margin-left:10px;
+			width:125px;
+			height:125px;
+			}
+		#one{
+			border:2px solid red;
+			background-color:white;
+			font-size:25px;
+			color:black;
+		}
+		#top{
+		margin-bottom:0px;
+		}
+		a:hover{
+		background-color:gold;
+		color:black;
+		text-decoration:none;
+		}
+		#one>ol>li{
+			color:black;
+			}
+		
+
+
+		#precautions{
+			background-color:	cyan;
+			border:2px solid green;
+			font-size:20px;
+			}
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		background-color: grey;
+		}	
+		#seasonal{
+			border:2px solid orange;
+			padding-bottom:20px;
+			}
+			
+		#isolation{
+			border:2px solid yellowgreen;
+			font-size:17.5px;
+			background-color:silver;
+			}
+		#pulse{
+			background-color:dodgerblue;
+			font-size:17.5px;
+			border:2px solid magenta;
+			}
+		#scan{
+		font-size:17.5px;
+		border:2px solid yellowgreen;
+		padding-bottom:20px;
+		}
+		#presen{
+		background-color:#F5F5F5;
+		border:2px solid black;
+		padding-bottom:20px;
+		}
+		#last{
+		background-color:black;
+		color:white;
+		font-size:20px;
+		height:100px;
+		border:1px solid green;
+		padding-top:17.5px;
+		}
+		.geek1 { 
+        font-size:36px; 
+        font-weight:bold; 
+        color:red; 
+        padding-bottom:10px;
+text-align:center;		
+    } 
+	.main{
+	border:1.75px solid black;
+	}
+			
+		</style>
+	</head>
+	<body>
+	    <nav class="navbar" id="top">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+
+
+				</button>
+				<img id="corona" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKbT3EvSLqZ8DkOyVWuG-XmXu0mW1R9UQsdQ&usqp=CAU" alt="corona" />
+				<a href="/" style="text-decoration:none;color:orange;font-size:25px;">CORONA BOT(TS)</a>
+			</div>
+      
+      
+    
+			<ul class="nav navbar-nav visible-lg vinay navbar-right">
+				<li><a href="{% url 'coronaTs'%}">New cases in Telangana </a></li>
+				<li><a href="{% url 'coronaDistrict'%}">District wise report</a></li>
+				<li><a href="{% url 'coronaLabs'%}">Labs for testing</a></li>
+				<li><a href="{% url 'coronaRapidTest'%}" >Rapid testing agencies</a></li>
+				<li><a href="{% url 'coronaCenters'%}" >Covid care centers</a></li>
+      
+			</ul>
+
+
+			<div class="collapse" id="myNavbar">
+				<ul class="nav navbar-nav ">
+					<li><a class="menu-item" href="#"</a>New cases in Telangana</li>
+					<li><a class="menu-item" href="#"></a>District wise report</li> 
+         
+        
+					<li><a class="menu-item" href="#">Government labs</li> 
+		            <li><a class="menu-item" href="#">Rapid testing agencies</a></li>
+		
+        
+				</ul>
+      
+			</div>
+
+		</div>
+	</nav>
+	<div class = "main"> 
+    <marquee class="marq" bgcolor = "cyan" direction = "left" loop="" > 
+        <div class="geek1">STAY HOME STAY SAFE</div> 
+        
+    </marquee> 
+    </div>
+	<div id="one">
+		<h3 style="margin-left:30px"><u>INDEX </u> &nbsp &nbsp(click on each to go to particular heading)</h3>
+		<br></br>
+		<ol>
+			<li><a href="#precautions" style="color:black">Precautions/Preventive measures</a></li>
+			<li><a href="#seasonal" style="color:black">Seasonal Fevers/Corona</a></li>
+			<li><a href="#isolation" style="color:black">Home Isolation care for corona with mild symptoms</li></li>
+			<li><a href="#pulse" style="color:black">Pulse oximeter importance</a></li>
+			<li><a href="#scan" style="color:black">CT scan findings</a></li>
+			<li><a href="#presen" style="color:black">six types of covid 19 presentation</a></li>
+			
+		</ol>
+	</div>
+	
+	<div id="precautions">
+		<h2 style="color:red"><bold>PRECAUTIONS</bold></br></br></h2>
+		<center><q ><em>Keeping your immune system healthy is key for preventing infections and diseases</em></q></center>
+		<br></br><br></br>
+		
+		<ol>
+			<li>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</br></li>
+			<li>Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.</br></li>
+			<li>Avoid touching eyes, nose and mouth.</br></li>
+			<li>Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.</br></li>
+			<li>Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.</br></li>
+			<li>Give you time for atleast 10-15 mins to in sunlight</li>
+			<li>Keep up to date on the latest COVID-19 hotspots (cities or local areas where COVID-19 is spreading widely). If possible, avoid traveling to places – especially if you are an older person or have diabetes, heart or lung disease.</br></li>
+			<li>Vitamin-c tablets can be taken twice daily</li>
+			<li>Vitamin-d supplement can be taken once a week</li>
+			<li>Bcomplex suplements can be taken once daily</li>
+			<li>Zinc also helps in boosting immunity</li>
+			
+		
+		</ol>
+		<center>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/2etHdW0Xdsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</center>
+	</div>
+	<div id="seasonal">
+	<h2><center>Seasonal infections vs corona</center></h2>
+		<table>
+			<tr>
+				<th>Seasonal infections</th>
+				<th>Corona</th>
+				
+			</tr>
+			<tr>
+				<td>mild fever</td>
+				<td>severe fever</td>
+				
+			</tr>
+			<tr>
+				<td>Generally resolves by three days</td>
+				<td>Long duration</td>
+				
+			</tr>
+			<tr>
+				<td>Cold with rhinorrhea</td>
+				<td>Cold wihout rhinorrhea</td>
+				
+			</tr>
+			<tr>
+				<td>wet cough</td>
+				<td>dry cough</td>
+				
+			</tr>
+			<tr>
+				<td>Taste and smell sensations are intact</td>
+				<td>Taste and smell are lost</td>
+				
+			</tr>
+			<tr>
+				<td>mild body pains</td>
+				<td>severe body pains</td>
+				
+			</tr>
+			<tr>
+				<td>mild headache and throat pain</td>
+				<td>sever headache and throat pain</td>
+				
+			</tr>
+			<tr>
+				<td>No congestion of eyes</td>
+				<td>congestion is seen</td>
+				
+			</tr>
+  
+		</table>
+		<center>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/BAGzOXVwTHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</center>
+	</div>
+	<div id="isolation" >
+	
+	<h2><center>Home isolation care for corona +cases with mild symptoms</center></h2>
+	<br></br>
+	<ul>
+	<li>Good Hydration</li>
+	<li>IVERMECTINE 12 MG OD FOR 3 DAYS</li>
+	<li>TAB VIT C 500 MG TID</li>
+	<li>TAB ZINC 50MG OD</li>
+	<li>TAB VIT D 60000 IU ONCE A WEEK</li>
+	<li>IF COUGH PRESENT - TAB MUCINAC 600MG BD ,SYRUP RAPITUSS 10ML TID</li>
+		
+	</ul>
+	
+	
+	<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/UBHVc1uYlS0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</center>
+</div>
+	</div>
+	<div id="pulse">
+	<h2><center>PULSE OXIMETER</center></h2><br></br>
+	<p><strong>The purpose of pulse oximetry is to check how well your heart is pumping oxygen through your body.</strong></p>
+	<br></br>
+	<p>Common uses of pulse oximeter</p>
+	<ul>
+		<li>to assess how well a new lung medication is working</li>
+		<li>to evaluate whether someone needs help breathing</li>
+		<li>to evaluate how helpful a ventilator is</li>
+		<li>to monitor oxygen levels during or after surgical procedures that require sedation</li>
+		<li>to determine how effective supplemental oxygen therapy is, especially when treatment is new</li>
+		<li>to assess someone’s ability to tolerate increased physical activity</li>
+		<li>to evaluate whether someone momentarily stops breathing while sleeping — like in cases of sleep apnea — during a sleep study</li>
+	</ul>
+	<center>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/kyILuYZ15jc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</center>
+	
+	</div>
+	<div id="scan">
+	<h2><center>Ct SCAN FINDINGS</center></h2><br></br>
+	<p>Based on the CT findings, the level of suspicion of COVID-19 infection is graded from very low or Co-RADS1 up to very high or CO-RADS5</p>
+	<br></br>
+	<p>Typical for covid-19</p>
+	<ol>
+		<li>multifocal ground glass opacities</li>
+		<li>Peripheral and basal demarcation</li>
+		<li>Unsharp demarcation</li>
+		<li>Vascular thickening</li>
+		<li>Round</li>
+		<li>Crazy paving</li>
+		<li>Glass and Consolidation </li>
+		<li>(Reversed)halo</li>
+		<li>Spider web</li>
+	</ol>
+	<p>Atypical findings for covid-19</p>
+	<ol>
+		<li>central or peribronchovascular </li>
+		<li>More apical distribution</li>
+		<li>Lymphadenopathy</li>
+	</ol>
+	<p>Very atypical findings</p>
+	<ol>
+		<li>cavitation-calcification</li>
+		<li>Tree in bud,bronchiolitis</li>
+		<li>Nodular pattern</li>
+		<li>Mass</li>
+		<li>Pleural thickening</li>
+	</ol>
+	<center>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/u7pvq0eIIaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</center>
+		
+	</div>
+	<div id="presen">
+		<h3><center>covid 19 presentations<center></h3>
+		<center>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/7y6r1UhQCjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</center>
+	</div>
+	<div id="last">
+		<p><center><strong>Thank You</strong></center></p>
+	</div>
+	
+
+	</body>
+</html>

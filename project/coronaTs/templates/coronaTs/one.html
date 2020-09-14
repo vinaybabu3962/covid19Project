@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+		<style>
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<p style="padding-top:10px">&nbsp <a href="/" style="text-decoration:none;color:black" ><i style='font-size:20px' class='fas'>&#xf060;</i>&nbsp Back to Home page</a></p>
+		<a href="{% url 'count1' %}" style="margin-bottom:10px;padding-bottom:10px">click here to check covid cases by date </a>
+		<center><img src="{% static 'out1.png' %}" alt="dis" /></center>
+	</body>
+</html>

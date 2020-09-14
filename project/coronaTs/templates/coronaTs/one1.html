@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				
+				
+			}
+			
+		
+			#vinay{
+				color:yellowgreen;
+				background-color:black;
+				border:1px solid red;
+				
+				
+				
+			}
+			#second{
+				height:500px;
+				background-color:#F0F8FF;
+				padding-top:150px;
+			}
+			#blink { 
+            font-size: 20px; 
+            font-weight: bold; 
+            font-family: sans-serif;
+			text-align:center;
+			margin-bottom:30px;}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="vinay">
+			<p style="padding-top:10px">&nbsp <a href="{% url 'coronaTs' %}" style="text-decoration:none;color:white" ><i style='font-size:20px' class='fas'>&#xf060;</i>&nbsp Back to telangana page</a></p>
+			<p ><b><center style='font-size:30px;color:blue;padding-bottom:10px'>Corona Cases in Telangana</center></b></p>
+		</div>
+		<div id="second">
+		<p id="blink"> 
+				Stay Home Stay Safe! India Fights Corona 
+			</p>
+			
+			<center>{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}</center>
+			<form action="count"">
+				<center>
+					<label>Date</label>
+					<input type="date" placeholder="Enter te date to check" name="date" />
+					<br></br>
+					<input type="submit" value="submit"/>
+					<br></br>
+					{% if positivecases %}
+						<div style="border:1px solid grey">
+							<h3>Date:</h3>{{ date }}
+							<h3>No of positive cases:</h3> {{ positivecases }}
+							<h3>No of recovered cases:</h3> {{ negativecases }}
+							<h3>No of deaths:</h3> {{ deaths }}
+							<h3>No of samples tested:</h3> {{ samplestested }}
+							<h3>No of patients in home isolation:</h3> {{ homeisolation }}
+							<h3>Recovery rate:</h3> {{ recoveryrate }}
+							<h3>Case fatality rate:</h3> {{ casefatalityrate }}
+							
+						</div>
+					{% endif %}
+				</center>
+			</form>
+		</div>
+	</body>
+</html>

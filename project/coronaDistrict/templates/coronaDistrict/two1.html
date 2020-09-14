@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				
+				
+			}
+			
+		
+			#vinay{
+				color:yellowgreen;
+				background-color:black;
+				border:1px solid red;
+				
+				
+				
+			}
+			#second{
+				height:500px;
+				background-color:#F0F8FF;
+				padding-top:150px;
+			}
+			#blink { 
+            font-size: 20px; 
+            font-weight: bold; 
+            font-family: sans-serif;
+			text-align:center;
+			margin-bottom:30px;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="vinay">
+			<p style="padding-top:10px">&nbsp <a href="{% url 'coronaDistrict' %}" style="text-decoration:none;color:white" ><i style='font-size:20px' class='fas'>&#xf060;</i>&nbsp Back to district page</a></p>
+			<p ><b><center style='font-size:30px;color:blue;padding-bottom:10px'>District wise report</center></b></p>
+		</div>
+		<div id="second">
+		<p id="blink"> 
+				Stay Home Stay Safe! India Fights Corona 
+			</p>
+		<center>{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}</center>
+			<form action="count"">
+				<center>
+					<label>Date</label>
+					<input type="date" placeholder="Enter te date to check" name="date" />
+					<br></br>
+					<label>District</label>
+					<input type="text" placeholder="Enter te district eg:mancherial" name="district" />
+					<br></br>
+					<input type="submit" value="submit"/>
+					<br></br>
+					{% if positivecases %}
+						<div style="border:1px solid grey">
+							<h3>Date:</h3>{{ date }}
+							<h3>District:</h3>{{district}}
+							<h3>No of positive cases:</h3> {{ positivecases }}
+							
+							
+						</div>
+					{% endif %}
+				</center>
+			</form>
+		</div>
+	</body>
+</html>
